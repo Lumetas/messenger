@@ -5,10 +5,11 @@ if(file_exists("../users/$token")){
 setcookie("token", $token, time()+(60*60*24*30));
 setcookie("id", file_get_contents("../users/$token"), time()+(60*60*24*30));
 
-header("Location: index.php");}
+header("Location: index.php");
 }
 else{
 header("Location: auth.php"); 
+}
 }
 ?>
 
