@@ -2,8 +2,8 @@
 function addMess($arr, $mess){
     $i = 1;
     $a = [];
-    if (count($arr) >= 50){
-    while ($i < 50):
+    if (count($arr) >= 20){
+    while ($i < 20):
         array_push($a, $arr[$i]);
         $i += 1;
         endwhile;
