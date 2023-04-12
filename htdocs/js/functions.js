@@ -117,13 +117,13 @@ function refreshChat(){
 			key = localStorage.getItem('key');
 		//	console.log(decrypt(JSON.parse(data[i]), key));
 			s = 0;
-            c = `<div align='center' style='
-position:relative; bottom:0px; left: 40px; font-size:100%;
+            c = `<div align='left' style='
+position:relative; bottom:0px; left: 40px; font-size:100%; width:80%;
 
-'`;
+'>`;
 			while (s < data.length){
 				a = decrypt(JSON.parse(data[s]), key);
-				c = c + `<span>${a}</span><br><br>`;
+				c = c + `<span style='white-space:pre-line'>${a}</span><br><br>`;
 		//		console.log(a);
 				s += 1;
 			}
@@ -142,7 +142,7 @@ position:relative; bottom:0px; left: 40px; font-size:100%;
 	});
 	}}
 
-
+ 
 function refreshAllChat(){
 	if (rAbonent() !== 'none'){
 	url =`php/readDi.php?id1=${id}&id2=${rAbonent()}`;
@@ -156,13 +156,13 @@ function refreshAllChat(){
 			key = localStorage.getItem('key');
 		//	console.log(decrypt(JSON.parse(data[i]), key));
 			s = 0;
-            c = `<div align='center' style='
-position:relative; bottom:0px; left: 40px; font-size:100%;
+            c = `<div align='left' style='
+position:relative; bottom:0px; left: 40px; font-size:100%; width:80%;
 
-'`;
+'>`;
 			while (s < data.length){
 				a = decrypt(JSON.parse(data[s]), key);
-				c = c + `<span>${a}</span><br><br>`;
+				c = c + `<span style='white-space:pre-line'>${a}</span><br><br>`;
 		//		console.log(a);
 				s += 1;
 			}
