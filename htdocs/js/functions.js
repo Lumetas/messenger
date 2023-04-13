@@ -202,8 +202,13 @@ function rAbonent(id){
 function showSettings(){
               document.getElementById('settings').style.display = 'unset';
     document.getElementById('keyArea').value = localStorage.getItem('key');
+	document.getElementById('chatsArea').value = localStorage.getItem('chats');
 
-          }
+}
+function saveChats(){
+	localStorage.setItem('chats', document.getElementById('chatsArea').value);
+	document.location.reload();
+}
 function closeSettings(){
 
  document.getElementById('settings').style.display = 'none';
