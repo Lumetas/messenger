@@ -105,7 +105,7 @@
         cursor: pointer;
         width:100%;
         border:grey 0.5px solid;
-     top: 9%;
+     top: 7%;
      position: relative;
 
 
@@ -116,7 +116,7 @@
         position:absolute;
         height:100vh;
         width:100vw;
-        background:rgb(37,37,37);
+        background:rgb(22,22,22);
         color:white;
         z-index:2;
         display:none;
@@ -126,7 +126,7 @@
 .closeSettings{
         background:#00000000;
         position:absolute;
-        right: 10px;
+        right: 10vw;
         top:5px;
         color:white;
         font-size:200%;
@@ -139,7 +139,7 @@
         background:rgb(37,37,37);
         color:white;
         position:relative;
-        left:40px;
+        left:10vw;
         top:10px;
         outline: 0px solid #1C6EA4;
         outline-offset: 0px;
@@ -153,9 +153,20 @@
 .saveKeyBut{
         background:rgb(37,37,37);
         color:white;
-     position:absolute;
-        left:40px;
-         bottom: 10vh;
+     position:relative;
+        left:10vw;
+         
+    font-size: 150%;
+     width:80vw;
+
+    }
+
+.saveChatsBut{
+        background:rgb(37,37,37);
+        color:white;
+     position:relative;
+        left:10vw;
+         
     font-size: 150%;
      width:80vw;
 

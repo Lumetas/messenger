@@ -27,13 +27,15 @@
           
 <span class='closeSettings' onclick='closeSettings()'>✖</span>
           
-          <p style='position:relative; left:40px; width:min-content;'>Ключ:</p> 
+          <p style='position:relative; left:10vw; width:min-content;'>Ключ:</p> 
 <textarea id='keyArea' class='keyArea'></textarea><br><br><br>
           <button onclick='saveKey()' class='saveKeyBut'>Сохранить</button>
 
 
 
-<br><br><br><form action='php/changeId.php' method='post'>
+<br><br><hr><br><br>
+<form action='php/changeId.php' method='post'>
+<p style='position:relative; left:10vw; width:max-content;'>Сменить ID:</p> 
 <input class='changeId' type='text' name='token' placeholder='token'><br><br>
        
 <input class='changeId' type='text' name='id' placeholder='new id'><br><br><br>
@@ -44,7 +46,7 @@
     background:rgb(37,37,37);
     color:white;
     position:relative;
-    left:40px;
+    left:10vw;
     outline: 0px solid #1C6EA4;
     outline-offset: 0px;
     font-size: 150%;
@@ -54,7 +56,12 @@
 }
 
        </style>
+<br><br><hr><br><br>
+          <p style='position:relative; left:10vw; width:max-content;'>Импорт/экспорт контактов:</p> 
+<textarea id='chatsArea' class='keyArea'></textarea><br><br><br>
+          <button onclick='saveChats()' class='saveChatsBut'>Сохранить</button>
 
+<br><br><br>
                                                                           
           </div>
 

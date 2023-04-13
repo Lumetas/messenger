@@ -5,8 +5,8 @@
     
           <div class='chatWindow'>
 <div class='chatId'>
-          <span style='position:absolute; top:5px; left:20px; color:white;' id='chatId'></span>
-          <span style='position:absolute; top:5px; right:20px; color:white;'><?php echo $_COOKIE['id']; ?></span>
+          <span style='position:absolute; top:0.5vh; font-size:2.5vh; left:20px; color:white;' id='chatId'></span>
+          <span style='position:absolute; top:0.5vh; font-size:2.5vh; right:20px; color:white;'><?php echo $_COOKIE['id']; ?></span>
           </div>
           
               <input type='text' id='messIn' onkeyup='plsEnter(event)' class='messIn'>
@@ -49,7 +49,13 @@
 }
 
        </style>
+<br><br><br>
+          <p style='position:relative; left:40px; width:max-content;'>Импорт/экспорт контактов:</p> 
+<textarea id='chatsArea' class='keyArea'></textarea><br><br><br>
+          <button onclick='saveChats()' class='saveKeyBut'>Сохранить</button>
 
+
+           
        
           </div>
 
