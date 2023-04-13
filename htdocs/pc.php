@@ -17,7 +17,7 @@
           <div class='menu' align='center'>
 
           <p onclick='showSettings()' class='menBut'>S</p>
-          <p class='menBut' onclick='addChat()'>+</p>
+          <p id='addChat' class='menBut' onclick='addChat()'>+</p>
 
           </div>
     
@@ -28,6 +28,28 @@
           <p style='position:relative; left:40px; width:min-content;'>Ключ:</p> 
 <textarea id='keyArea' class='keyArea'></textarea><br><br><br>
           <button onclick='saveKey()' class='saveKeyBut'>Сохранить</button>
-          
+
+
+<br><br><br><form action='php/changeId.php' method='post'>
+<input class='changeId' type='text' name='token' placeholder='token'><br><br>
+       
+<input class='changeId' type='text' name='id' placeholder='new id'><br><br><br>
+<input class='changeId' type='submit' value='Сохранить'>
+       </form>
+<style>
+       .changeId{
+    background:rgb(37,37,37);
+    color:white;
+    position:relative;
+    left:40px;
+    outline: 0px solid #1C6EA4;
+    outline-offset: 0px;
+
+
+}
+
+       </style>
+
+       
           </div>
 

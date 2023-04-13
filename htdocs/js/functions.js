@@ -1,3 +1,7 @@
+if (localStorage.getItem('chats') === null){	
+    localStorage.setItem('chats', JSON.stringify([]));
+}
+
 if (localStorage.getItem('key') === null){
 	let key = prompt('укажите ваш ключ, его всегда можно будет изменить в настройках'); 
     localStorage.setItem('key', key);
@@ -212,21 +216,25 @@ localStorage.setItem('key', document.getElementById('keyArea').value)
 function addChat(){
 	a = prompt('ID Пользователя');
 	if (a !== null & a !== ''){
-		
+		lumAjax({
+			url:`php/checkUser.php?id=${a}`,
+			success:function (data){
+				if (data === 'true'){
 	
-	if (localStorage.getItem('chats') === null){
-		a = JSON.stringify([a]);
-		localStorage.setItem('chats', a);
-	}
-	else{
+
         b = JSON.parse(localStorage.getItem('chats'));
 		if (b.indexOf(a) === -1){
 		b.unshift(a);
         b = JSON.stringify(b);
-		localStorage.setItem('chats', b);
-		}}
-		window.location.reload();
-	}}
+			localStorage.setItem('chats', b);
+			window.location.reload();
+		}
+		else{redAddUser()}}
+		
+				
+			    if (data === 'false') {
+					redAddUser();
+				}}})}}
 function removeChat(id){
 	a = JSON.parse(localStorage.getItem('chats'));
     b = a.indexOf(id);
@@ -235,4 +243,15 @@ function removeChat(id){
 	console.log(a);
 	localStorage.setItem('chats', a);
 	window.location.reload();
+}
+
+
+function redAddUser(){
+	document.getElementById('addChat').style.color = 'red';
+	document.getElementById('addChat').style.border = 'red 1px solid';
+	setTimeout(noRedAddUser, 3000);
+}
+function noRedAddUser(){
+document.getElementById('addChat').style.color = 'white';
+	document.getElementById('addChat').style.border = 'grey 1px solid';
 }

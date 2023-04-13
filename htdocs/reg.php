@@ -3,6 +3,7 @@ if (isset($_GET['reg'])){
         $id = rand(100000000, 999999999);
         $token = substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyz'), 0, 20);
         file_put_contents('../users/'.$token, $id);
+        file_put_contents('../id/'.$id, $token);
         echo json_encode([$token, $id]);
         exit();
     }

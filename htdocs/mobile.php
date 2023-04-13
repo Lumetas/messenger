@@ -19,17 +19,42 @@
 
           <span onclick='showSettings()' class='menBut'>&nbsp;S&nbsp;</span>
        <span> &nbsp; &nbsp; &nbsp;   <?php echo $_COOKIE['id']; ?> &nbsp; &nbsp; &nbsp; &nbsp;</span>
-          <span class='menBut' onclick='addChat()'>&nbsp;+&nbsp;</span>
+          <span id='addChat' class='menBut' onclick='addChat()'>&nbsp;+&nbsp;</span>
 
           </div>
     
-<div class='settings' id='settings'>
+<div style='overflow-y:auto; overflow-x:hidden;' class='settings' id='settings'>
           
 <span class='closeSettings' onclick='closeSettings()'>✖</span>
           
           <p style='position:relative; left:40px; width:min-content;'>Ключ:</p> 
 <textarea id='keyArea' class='keyArea'></textarea><br><br><br>
           <button onclick='saveKey()' class='saveKeyBut'>Сохранить</button>
-          
+
+
+
+<br><br><br><form action='php/changeId.php' method='post'>
+<input class='changeId' type='text' name='token' placeholder='token'><br><br>
+       
+<input class='changeId' type='text' name='id' placeholder='new id'><br><br><br>
+<input class='changeId' type='submit' value='Сохранить'><br><br>
+       </form>
+<style>
+       .changeId{
+    background:rgb(37,37,37);
+    color:white;
+    position:relative;
+    left:40px;
+    outline: 0px solid #1C6EA4;
+    outline-offset: 0px;
+    font-size: 150%;
+    width:80vw;
+
+
+}
+
+       </style>
+
+                                                                          
           </div>
 

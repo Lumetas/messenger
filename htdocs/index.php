@@ -1,8 +1,8 @@
 <?php
-if (!isset($_COOKIE['token'])){
+
 if (!isset($_COOKIE['id'])){
     header('Location: auth.php');
-}}
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,7 +22,7 @@ if (!isset($_COOKIE['id'])){
      <script src='js/ajax.js'></script>
      <script src='js/functions.js'></script>
      <script>
-    const id = <?php echo $_COOKIE['id']; ?>;
+    const id = '<?php echo $_COOKIE['id']; ?>';
     document.getElementById('mainId').innerHTML = id;
     let chatid = 0;
      </script>

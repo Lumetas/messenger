@@ -139,11 +139,11 @@
         background:rgb(37,37,37);
         color:white;
         position:relative;
-        left:5vw;
+        left:40px;
         top:10px;
         outline: 0px solid #1C6EA4;
         outline-offset: 0px;
-     width:90vw;
+     width:80vw;
         height:70vh;
         resize:none;
      font-size:150%;
@@ -157,6 +157,7 @@
         left:40px;
          bottom: 10vh;
     font-size: 150%;
+     width:80vw;
 
     }
 
