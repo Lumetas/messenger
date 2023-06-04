@@ -1,3 +1,4 @@
+const font = window.outerHeight / 100 * 3 + 'px';
 if (localStorage.getItem('chats') === null){	
     localStorage.setItem('chats', JSON.stringify([]));
 }
@@ -20,6 +21,22 @@ sendMsg();refreshChat(); document.getElementById('messIn').value =''; messIn.foc
 	}
 
 }
+
+
+function styles(){
+	percent = window.outerHeight / 100;
+    document.getElementById('topPanel').style.height = percent * 4 + 'px';
+    document.getElementById('hist').style.top = percent * 4 + 'px';
+	
+    document.getElementById('backBut').style.height = percent * 3 + 'px';
+	document.getElementById('chatId').style.height = percent * 3 + 'px';
+	document.getElementById('mId').style.height = percent * 3 + 'px';
+	
+	document.getElementById('backBut').style.fontSize = percent * 3 + 'px';
+	document.getElementById('chatId').style.fontSize = percent * 3 + 'px';
+	document.getElementById('mId').style.fontSize = percent * 3 + 'px';
+}
+
 
 function placeChats(){
 if (localStorage.getItem('chats') !== null){
@@ -59,7 +76,7 @@ if (localStorage.getItem('chats') !== null){
 		d = a[i];
 		c = c + `<div style='position:relative; border:grey 1px solid; height:8vh; left:5%; width: 90%;'>
 
-<p style='position:absolute; height:50%; width:80%; color: white; cursor:pointer;' onclick="wAbonent('${d}');refreshAllChat(); scrollHist();showDialog(1);">
+<p style='position:absolute; height:50%; width:80%; color: white; cursor:pointer;' onclick="styles();wAbonent('${d}');refreshAllChat(); scrollHist();showDialog(1);">
 &nbsp;&nbsp; ${d} &nbsp;&nbsp;
 </p>
 <span style='position:relative; left:90%; top:5.5px; width:20%; height:50%; font-size:200%; cursor:pointer;' onclick='removeChat("${d}")'>
@@ -122,12 +139,12 @@ function refreshChat(){
 		//	console.log(decrypt(JSON.parse(data[i]), key));
 			s = 0;
             c = `<div align='left' style='
-position:relative; bottom:0px; left: 40px; font-size:100%; width:80%;
+position:relative; bottom:0px; left: 40px; font-size:${font}; width:80%;
 
 '>`;
 			while (s < data.length){
 				a = decrypt(JSON.parse(data[s]), key);
-				c = c + `<span style='white-space:pre-line'>${a}</span><br><br>`;
+				c = c + `<span style='white-space:pre-line;'>${a}</span><br><br>`;
 		//		console.log(a);
 				s += 1;
 			}
@@ -161,12 +178,12 @@ function refreshAllChat(){
 		//	console.log(decrypt(JSON.parse(data[i]), key));
 			s = 0;
             c = `<div align='left' style='
-position:relative; bottom:0px; left: 40px; font-size:100%; width:80%;
+position:relative; bottom:0px; left: 40px; font-size:${font}; width:80%;
 
 '>`;
 			while (s < data.length){
 				a = decrypt(JSON.parse(data[s]), key);
-				c = c + `<span style='white-space:pre-line'>${a}</span><br><br>`;
+				c = c + `<span style='white-space:pre-line;'>${a}</span><br><br>`;
 		//		console.log(a);
 				s += 1;
 			}
