@@ -59,7 +59,7 @@ if (localStorage.getItem('chats') !== null){
 		d = a[i];
 		c = c + `<div style='position:relative; border:grey 1px solid; height:8vh; left:5%; width: 90%;'>
 
-<p style='position:absolute; height:50%; width:80%; color: white; cursor:pointer;' onclick="wAbonent('${d}');refreshAllChat(); scrollHist();showDialog(1);document.documentElement.requestFullscreen();">
+<p style='position:absolute; height:50%; width:80%; color: white; cursor:pointer;' onclick="wAbonent('${d}');refreshAllChat(); scrollHist();showDialog(1);">
 &nbsp;&nbsp; ${d} &nbsp;&nbsp;
 </p>
 <span style='position:relative; left:90%; top:5.5px; width:20%; height:50%; font-size:200%; cursor:pointer;' onclick='removeChat("${d}")'>
