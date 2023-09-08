@@ -312,7 +312,11 @@ function addChat(){
         b = JSON.stringify(b);
 			localStorage.setItem('chats', b);
 			sendfriend(id, adduserid)
-			window.location.reload();
+            if (sessionStorage['format'] === 'h'){placeChats()}
+			else {placeMobileChats()}
+
+			
+		
 		}
 		else{redAddUser()}}
 		
@@ -327,7 +331,8 @@ function removeChat(id){
 	a = JSON.stringify(a);
 	console.log(a);
 	localStorage.setItem('chats', a);
-	window.location.reload();
+	if (sessionStorage['format'] === 'h'){placeChats()}
+			else {placeMobileChats()}
 }
 
 
@@ -389,7 +394,7 @@ a = data;
 	c = '<br>';
 	while (i < b){
 		d = a[i];
-		c = c + `<div id='request-${d}'  class='reqDiv' style=''>
+		c = c + `<div style='color:white;' id='request-${d}'  class='reqDiv' style=''>
 
 <p class='reqP' onclick="addfriendreq('${d}')">
 &nbsp;&nbsp; ${d} &nbsp;&nbsp;
@@ -419,7 +424,8 @@ a = data;
 	else{
 		if (document.getElementById('friendRequests').style.display === 'unset'){
         document.getElementById('friendRequests').style.display = 'none';
-		window.location.reload();
+		if (sessionStorage['format'] === 'h'){placeChats()}
+			else {placeMobileChats()}
 		}}
 
 
@@ -454,6 +460,8 @@ function addfriendreq(friend){
         b = JSON.stringify(b);
 			localStorage.setItem('chats', b);
 			document.getElementById('request-' + friend).style.color = 'green';
+			if (sessionStorage['format'] === 'h'){placeChats()}
+			else {placeMobileChats()}
 			lumAjax({
     url:`getfriend.php?id=${id}&remove=${friend}`,
     success: function(data){
