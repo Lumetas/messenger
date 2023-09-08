@@ -4,7 +4,7 @@ $mainId = $_COOKIE['id'];
 echo <<<OUT
     <script src='js/ajax.js'></script>
     <script src='js/sendfriend.js'></script>
-    <script>let id = '$id'; let mainId = $mainId;</script>
+    <script>let id = '$id'; let mainId = '$mainId';</script>
       
 
 
@@ -14,6 +14,7 @@ echo <<<OUT
 OUT;
 ?>
         <script>
+
 
 
 function addChat(id){
@@ -30,16 +31,20 @@ function addChat(id){
 		b.unshift(a);
         b = JSON.stringify(b);
 			localStorage.setItem('chats', b);
-			window.location.href = '/';
+			sendfriend(mainId, id);
+			
 		}
 		else{ window.location.href = '/';}
 		
 				
 			    if (data === 'false') {
-					redAddUser();
+					window.location.href = '/';
 				}}}})}}
 
 addChat(id);
-sendfriend(mainId, id);
+
+
+
+window.location.href = '/';
 
     </script>
