@@ -285,7 +285,8 @@ function showSettings(){
 }
 function saveChats(){
 	localStorage.setItem('chats', document.getElementById('chatsArea').value);
-	document.location.reload();
+	if (sessionStorage['format'] === 'h'){placeChats()}
+			else {placeMobileChats()}
 }
 function closeSettings(){
 	try{document.getElementById('showSettingsBut').onclick = showSettings}catch(e){}
