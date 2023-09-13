@@ -1,8 +1,15 @@
-<?php include('style.php/mobile.php'); $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/addchat.php'; ?>
+<?php $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/addchat.php'; ?>
+
+<link rel="stylesheet" href="css/mobile.css">
+         <link rel="stylesheet" href="css/menu.css">
+         
 <div id='abonent' style='disply:none;'>none</div>
        <div id='mainId' style='display:none;'></div>
 <div id='listOfDialogs' class='listOfDialogs'></div>
-    
+
+
+         <input type="checkbox" id="chat-checkbox"/>
+<div class="side-chat">
           <div onscroll='alert(1)' onclick='' id='chatWindow' class='chatWindow'>
 <div id='topPanel' class='chatId'>
           <span id='backBut' style='position:absolute; top:5px; left: 10px; color:white;' onclick='showDialog(0);'>ᐊ</span>
@@ -18,20 +25,28 @@
           
           </div>
           
-       <textarea setTimeout("scrollHist();", 500);' onfocus='setTimeout("scrollHist();", 500); document.getElementById("topPanel").style.display = "none";' type='text' onblur='document.getElementById("topPanel").style.display = "unset"' id='messIn' autocomplete="off" x-autocompletetype='off' class='messIn'></textarea>
+       <textarea onfocus='setTimeout("scrollHist();", 500); document.getElementById("topPanel").style.display = "none";' type='text' onblur='document.getElementById("topPanel").style.display = "unset"' id='messIn' autocomplete="off" x-autocompletetype='off' class='messIn'></textarea>
 
     <button id='sendBut' onclick="sendMsg(); refreshChat(); document.getElementById('messIn').value = ''; messIn.focus();" class='sendBut'>➤</button>
     <div class='hist' id='hist' style=''></div>
     </div>
-
+</div>
           <div class='menu' align='center'>
 
-          <span onclick='showSettings()' class='menBut'>&nbsp;S&nbsp;</span>
-       <span> &nbsp; &nbsp; &nbsp;   <?php echo $_COOKIE['id']; ?> &nbsp; &nbsp; &nbsp; &nbsp;</span>
-          <span id='addChat' class='menBut' onclick='addChat()'>&nbsp;+&nbsp;</span>
+          
+       <span> &nbsp; &nbsp; &nbsp;   lum-messenger &nbsp; &nbsp; &nbsp; &nbsp;</span>
+<label class="side-button-1" for="settings-checkbox"><span onclick='document.getElementById("settings").scrollTop = 0;' class='menBut opensettingsbut'>&nbsp;≡&nbsp;</span></label>
+
+
+
+          
+
+
+
+
 
           </div>
-    
+    <span id='addChat' class='menBut addchatbut' onclick='addChat()'>&nbsp;+&nbsp;</span>
 
 
 <div style='
@@ -43,20 +58,19 @@ display:none;
     width: 100vw;
     background: #121212;
     color: white;
-    z-index: 5;
+    z-index: 10;
     
 ' id='friendRequests'>
 
 
        </div>
-
+<input type="checkbox" id="settings-checkbox"/>
+<div class="side-settings">
 <div class='settings' style='overflow-y:auto; overflow-x:hidden; border-left: 1px solid white; border-right: 1px solid white;' id='settings'>
           <img class='qr'  src='https://chart.googleapis.com/chart?cht=qr&chl=<?php echo $url.'?id='.$_COOKIE['id'] ;?>&chs=180x180&choe=UTF-8&chld=L%7C2' alt='https://chart.googleapis.com/chart?cht=qr&chl=<?php echo $url.'?id='.$_COOKIE['id'] ;?>&chs=300x300&choe=UTF-8&chld=L%7C2'></img>
 
           
-       <!--   <p style='position:relative; left:40px; width:min-content;'>Ключ:</p> 
-<textarea id='keyArea' class='keyArea'></textarea><br><br><br>
-          <button onclick='saveKey()' class='saveKeyBut'>Сохранить</button>-->
+   
 
 
 
@@ -116,5 +130,4 @@ display:none;
        
        <button class='changeId' onclick='installEvent.prompt()' style='height:max-content; ' >Установить приложение</button><br><br><br>
        
-          </div>
-
+          </div></div>

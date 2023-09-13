@@ -15,7 +15,7 @@ if (!isset($_COOKIE['id'])){
     <link rel="manifest" href="pwa/pwalib.php?manifest" />
     <link rel="shortcut icon" type="image/png" href="image/ic_launcher_round.png"/>
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/all.css">
      <script src="pwa/pwalib.php?js"></script>
      <script src='js/ende.js'></script>
      <script src='js/aes.js'></script>
@@ -26,7 +26,6 @@ if (!isset($_COOKIE['id'])){
      <script src='js/version.js'></script>
      <script src='js/sendfriend.js'></script>
      <script>
-    //installEvent.prompt();
     const id = '<?php echo $_COOKIE['id']; ?>';
     document.getElementById('mainId').innerHTML = id;
     let chatid = 0;

@@ -95,10 +95,10 @@ if (localStorage.getItem('chats') !== null){
 
 function showDialog(num){
     if (num === 1){
-document.getElementById('chatWindow').style.display = 'unset';
+        document.getElementById('chat-checkbox').checked = true;
     }
     else if (num === 0){
-document.getElementById('chatWindow').style.display = 'none';
+		document.getElementById('chat-checkbox').checked = false;
     }
 
 }
@@ -276,7 +276,7 @@ function rAbonent(id){
 }
 
 function showSettings(){
-              document.getElementById('settings').style.display = 'unset';
+              document.getElementById('settings-checkbox').checked = true;
     //document.getElementById('keyArea').value = localStorage.getItem('key');
 	document.getElementById('chatsArea').value = localStorage.getItem('chats');
 	try{
@@ -290,7 +290,7 @@ function saveChats(){
 }
 function closeSettings(){
 	try{document.getElementById('showSettingsBut').onclick = showSettings}catch(e){}
-	document.getElementById('settings').style.display = 'none';
+	document.getElementById('settings-checkbox').checked = false;
 	openRequests(false);
 }
 function saveKey(){
@@ -368,7 +368,8 @@ document.addEventListener("touchstart", function (e) {
 document.addEventListener("touchmove", function (e) {
     if (event) {
         if((e.touches[0].pageX - event.touches[0].pageX) > 200){
-			closeSettings();
+			document.getElementById('settings-checkbox').checked = false;
+			document.getElementById('friendRequests').style.display = 'none';
 			document.getElementById('messIn').blur();
 			showDialog(0);
 
@@ -379,6 +380,10 @@ document.addEventListener("touchmove", function (e) {
 document.addEventListener("touched", function (e) {
     event = null;
 });
+
+
+
+
 
 function openRequests(mode){
 	if(mode){

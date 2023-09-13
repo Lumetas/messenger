@@ -1,4 +1,8 @@
-<?php include('style.php/pc.php'); $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/addchat.php';?>
+<?php $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/addchat.php';?>
+
+
+<link rel="stylesheet" href="css/pc.css">
+<link rel="stylesheet" href="css/pcmenu.css">
 <div id='abonent' style='disply:none;'>none</div>
        <div id='mainId' style='display:none;'></div>
 <div id='listOfDialogs' class='listOfDialogs'></div>
@@ -37,7 +41,7 @@
 <div style='
 display:none;
     top: 0px;
-    left: 58vw;
+    left: 60vw;
     position: absolute;
     height: 100vh;
     width: 20vw;
@@ -49,7 +53,11 @@ display:none;
 
 
        </div>
-       
+
+
+
+<input type="checkbox" id="settings-checkbox"/>
+<div class="side-settings">
 <div class='settings' style='overflow-y:auto; overflow-x:hidden; border-left: 1px solid white; border-right: 1px solid white;' id='settings'>
           <img class='qr'  src='https://chart.googleapis.com/chart?cht=qr&chl=<?php echo $url.'?id='.$_COOKIE['id'] ;?>&chs=180x180&choe=UTF-8&chld=L%7C2' alt='https://chart.googleapis.com/chart?cht=qr&chl=<?php echo $url.'?id='.$_COOKIE['id'] ;?>&chs=300x300&choe=UTF-8&chld=L%7C2'></img>
 
@@ -120,3 +128,4 @@ display:none;
        
           </div>
 
+</div>

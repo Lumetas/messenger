@@ -8,7 +8,7 @@ let height = window.innerHeight
 		success:function(data){
 			document.getElementById('documentBody').innerHTML = data;
             placeChats(); 
-			document.getElementById('messIn').style.height = (height / 100 * 6) - 25 + 'px';
+		
 			sessionStorage['format'] = 'h';
 			bg()
 
@@ -26,7 +26,7 @@ if (height >= width){
 			
 			document.getElementById('documentBody').innerHTML = data;
             placeMobileChats();
-			document.getElementById('messIn').style.height = (height / 100 * 6) - 5 + 'px';
+			document.getElementById('messIn').style.height = (height / 100 * 6) - 6 + 'px';
 			document.getElementById('sendBut').style.height = height / 100 * 6 + 'px';
             sessionStorage['format'] = 'v';
             bg();

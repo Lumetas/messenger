@@ -1,0 +1,44 @@
+/* Оформление боковой панели */
+#settings-checkbox, #chat-checkbox {
+    display: none;
+}
+.side-settings {
+    position: absolute;
+    z-index: 999999;
+    top: 0vh;
+    right: -111vw;
+    background: #00000000;
+    transition: all 0.5s;  
+    width: 20vw;
+    height:  100vh;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    color: #FFF;
+	
+    
+}
+
+
+#settings-checkbox:checked + .side-settings {
+    right: 0vw;
+	
+}
+
+
+
+.side-chat {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: -121vw;
+    background: #00000000;
+    transition: all 0.5s;  
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    color: #FFF;
+    padding: 40px 20px;
+}
+
+#chat-checkbox:checked + .side-chat {
+    right: -14.3vw;;
+}
