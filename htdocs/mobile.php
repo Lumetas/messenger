@@ -35,7 +35,7 @@
 
           
        <span> &nbsp; &nbsp; &nbsp;   lum-messenger &nbsp; &nbsp; &nbsp; &nbsp;</span>
-<label class="side-button-1" for="settings-checkbox"><span onclick='document.getElementById("settings").scrollTop = 0;' class='menBut opensettingsbut'>&nbsp;≡&nbsp;</span></label>
+<span onclick='document.getElementById("settings").scrollTop = 0; showSettings(1);' class='menBut opensettingsbut'>&nbsp;≡&nbsp;</span>
 
 
 
